@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('mongodb');
+var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
 var url = process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || process.env.PROD_MONGODB;
 
