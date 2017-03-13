@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || process.env.PROD_MONGODB;
+var url = process.env.MONGODB_URI || process.env.PROD_MONGODB || 'mongodb://127.0.0.1:27017/test';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
