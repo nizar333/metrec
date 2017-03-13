@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
 var assert = require('assert');
-var url = process.env.MONGODB_URI;
+var url = process.env.MONGOLAB_URI;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
