@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var assert = require('assert');
-var url = 'mongodb://127.0.0.1:27017/test';
+var url = 'mongodb://@ds053370.mlab.com:53370/heroku_30qp2xgr';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
