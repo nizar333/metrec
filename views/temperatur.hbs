@@ -1,0 +1,189 @@
+<nav class="tetapsetia">
+    <div class="nav-wrapper blue">
+        <a href="#" class="brand-logo">Metrology Receiving</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="dropdon" href="#!" data-activates="notife"><span class="new badge">3</span><i class="material-icons right">snooze</i></a></li>
+            <li><a class="dropdon" href="#!" data-activates="prof">Hi, Temps<i class="material-icons right">assignment_ind</i></a></li>
+        </ul>
+    </div>
+</nav>
+<!-- . notifikasi -->
+<ul id="notife" class="dropdown-content notife">
+    <li><a class="blue-text" href="#!">nomet. 654321, Selesai kalibrasi</a></li>
+    <li class="divider"></li>
+    <li><a class="orange-text" href="#!">order. 000-00, segera kirim</a></li>
+    <li class="divider"></li>
+    <li><a class="red-text" href="#!">order. 000-00, terlambat kirim</a></li>
+</ul>
+
+<!-- . profil -->
+<ul id="prof" class="dropdown-content prof">
+    <li><a class="white-text" href="#!">Profil</a></li>
+    <li><a class="white-text" href="#!">Pengaturan</a></li>
+    <li class="divider"></li>
+    <li><a class="white-text" href="/logout">Keluar</a></li>
+</ul>
+
+
+
+<!-- 2. menu samping -->
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav section">
+            <li><ul class="collapsible collapsible-accordion repair">
+                <li>
+                    <a class="collapsible-header black repair">ANTRIAN</a>
+                    <div class="collapsible-body repair">
+                        <ul>
+                            <li><a href="/t#antri-lab">&nbsp Di-Lab</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            </li>
+            <li><a href="#cari">PENCARIAN</a></li>
+        </ul>
+    </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="warna">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="tetapsetia mundur">
+                    <a href="#menu-toggle" id="menu-toggle"><i class="material-icons">view_stream</i></a>
+                </div>
+                <div class="eser">
+                    <!-- ANTRIAN LAB -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="antri-lab">
+                        <h4>Antrian-Lab</h4>
+                        <form id="myform" action="/selesait" method="post" class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-orders" onkeyup="myFunction3()" placeholder="Cari order..">
+                                </div>
+                                <div class="input-field col s3">
+                                    <input type="text" name="nomet" id="nomets" value="">
+                                    <label for="order">nomet</label>
+                                </div>
+                                <div class="input-field col s3" hidden>
+                                    <input type="text" name="hasil" id="hasil" value="">
+                                    <label for="hasil"></label>
+                                    <input type="text" name="antrian" id="antrian" value="selesai">
+                                    <label for="antrian"></label>
+                                    <input type="text" name="tglkal" id="tglkal" value="{{moment}}">
+                                    <label for="tglkal"></label>
+                                </div>
+                                <button id="submit-form" class="btn-floating green kirim"><i class="material-icons">input</i></button>
+                            </div>
+                            {{#if anchor1}}
+                                <script> window.onload = window.location.hash = '#antri-lab'; </script>
+                            {{/if}}
+                        </form>
+
+                        <div class="center tabel" >
+                            <table id="tab-lab" class="scroll lab">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Antrian Lab</th></tr>
+                                <tr>
+                                    <th data-field="tgl-masuk">Tgl_Masuk</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="sub-no">Sub_No</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="Waktu">Waktu</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items2}}
+                                {{# each items2 }}
+                                    <tr>
+                                        <td>{{moment this.Tgllab format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Sub_No}}</td>
+                                        <td class="nr">{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{moment this.Tgllab "from" d}}</td>
+                                        <td><label for="submit-form" class="btn-floating green use-address selesai" data-tooltip="pass"><i class="material-icons">done</i></label></td>
+                                        <td><label for="submit-form" class="btn-floating red use-add selesai" data-tooltip="failed"><i class="material-icons">not_interested</i></label></td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a id="second" href="/t#antri-lab" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                    <!-- PENCARIAN ALAT -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="cari">
+                        <h4>Pencarian</h4>
+                        <form class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-nomet" onkeyup="myFunction()" placeholder="Cari Nomet..">
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-order" onkeyup="myFunction1()" placeholder="Cari order..">
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-lokasi" onkeyup="myFunction2()" placeholder="Cari lokasi..">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="center tabel wrapper">
+                            <table id="tab-cari" class="scroll kare">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Pencarian</th></tr>
+                                <tr class="header">
+                                    <th data-field="tgl-terima">Tgl_Diterima</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="pengirim">Pengirim</th>
+                                    <th data-field="antrian">Antrian</th>
+                                    <th data-field="tgl-kal">Tgl_Kal</th>
+                                    <th data-field="hasil">Hasil</th>
+                                    <th data-field="tgl-Kembali">Tgl_Kembali</th>
+                                    <th data-field="pengambil">Pengambil</th>
+                                    <th data-field="nik">NIK</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items5}}
+                                {{# each items5 }}
+                                    <tr>
+                                        <td>{{moment this.Tanggal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{this.Pengirim}}</td>
+                                        <td>{{this.Antrian}}</td>
+                                        <td>{{moment this.Tglkal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.Hasil}}</td>
+                                        <td>{{moment this.Tglclose format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.Pengambil}}</td>
+                                        <td>{{this.NIK}}</td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a href="/showallt#cari" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 6. copyright -->
+<footer class="center">
+    <p>Copyright &copy; zarCompany&trade;</p>
+</footer>

@@ -1,0 +1,314 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+ body {
+    overflow-x: hidden;
+ }
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-top: 65px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a, .collapsible-header {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 200px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 200px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+.repair{
+    border-color: black;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.tetapsetia{
+    position: fixed;
+    z-index:10;
+    background:inherit;
+}
+
+.mundur{
+    margin-top: 50px;
+}
+
+.konten{
+    float: left;
+    margin: auto;
+    margin-top: 70px;
+    height: 87vh;
+    background: white;
+    border-radius: 20px;
+    display: inline-table;
+}
+
+.eser{
+    margin-left: 60px;
+}
+
+.warna{
+    background-color: #d6d3d3;
+}
+
+.center{
+    text-align: center;
+    padding: 10px;
+}
+
+.notife{
+    min-width: 300px;
+    margin-left: -150px;
+}
+
+.prof{
+    margin-left:-10px;
+    background-color: black;
+}
+
+.order{
+    padding: 20px;
+}
+
+.tabel{
+    margin: 50px;
+}
+
+.kirim{
+margin-top: 20px;
+}
+
+.login{
+    margin: 100px;
+    padding: 30px;
+}
+
+.forget{
+    padding-left: 15px;
+}
+
+/* TABEL SCROLL*/
+table.scroll {
+    width: 100%;
+    border-spacing: 0;
+}
+
+table.scroll th,
+table.scroll td,
+table.scroll tr,
+table.scroll thead,
+table.scroll tbody { display: block; }
+
+table.scroll thead tr {
+    /* fallback */
+    width: 97%;
+    /* minus scroll bar width */
+    width: -webkit-calc(100% - 16px);
+    width:    -moz-calc(100% - 16px);
+    width:         calc(100% - 16px);
+}
+
+table.scroll tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+table.scroll tbody {
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table.scroll tbody td,
+table.scroll thead th {
+    width: 12.5%;
+    float: left;
+}
+
+table.lab tbody td,
+table.lab thead th {
+    width: 12%;
+    float: left;
+}
+
+table.salse tbody td,
+table.salse thead th {
+    width: 19%;
+    float: left;
+}
+
+table.scroll.kare {
+    width: 160%;
+
+}
+
+table.kare tbody td,
+table.kare thead th {
+    width: 110px;
+
+}
+
+thead tr th {
+    height: 30px;
+    line-height: 5px;
+    text-align: center;
+}
+
+tbody td:last-child, thead th:last-child {
+    border-right: none !important;
+}
+
+tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #8ab0b3;
+}
+
+
+table.scroll tbody td.kosong,
+table.scroll.lab tbody td.kosong,
+table.scroll.salse tbody td.kosong,
+table.scroll.kare tbody td.kosong{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+table.scroll thead th.kosong,
+table.scroll.lab thead th.kosong,
+table.scroll.salse thead th.kosong,
+table.scroll.kare thead th.kosong{
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+}
+
+.mundur1{
+    margin-top: 60px;
+}
+
+.mundur2{
+    margin-top: 20px;
+}
+
+/*TABEL PENCARIAN*/
+
+.wrapper {
+    overflow-x: scroll;
+    width: 85%;
+}

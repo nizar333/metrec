@@ -1,0 +1,34 @@
+<div class="container">
+
+        <form action="/daftar" method="post" class="col s6 l5 m5 z-depth-3 warna login">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" name="nama" id="nama">
+                    <label for="nama">Nama</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" name="nik" id="nik">
+                    <label for="nik">NIK</label>
+                </div>
+            </div>
+            <div class="input-field col s3">
+                <input type="text" name="username" id="username">
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field col s3">
+                <input type="password" name="pass" id="pass">
+                <label for="pass">Password</label>
+            </div>
+            <p>
+                <input name="level" type="radio" id="receiver" value="receiver" />
+                <label for="receiver">receiver</label>
+            </p>
+            <p>
+                <input name="level" type="radio" id="technician" value="technician"/>
+                <label for="technician">technician</label>
+            </p>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+</div>

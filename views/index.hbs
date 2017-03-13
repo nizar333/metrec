@@ -1,0 +1,583 @@
+<nav class="tetapsetia">
+    <div class="nav-wrapper blue">
+        <a href="#" class="brand-logo">Metrology Receiving</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="dropdon" href="#!" data-activates="notife"><span class="new badge">3</span><i class="material-icons right">snooze</i></a></li>
+            <li><a class="dropdon" href="#!" data-activates="prof">Hi, recy<i class="material-icons right">assignment_ind</i></a></li>
+        </ul>
+    </div>
+</nav>
+<!-- . notifikasi -->
+<ul id="notife" class="dropdown-content notife">
+    <li><a class="blue-text" href="#!">nomet. 654321, Selesai kalibrasi</a></li>
+    <li class="divider"></li>
+    <li><a class="orange-text" href="#!">order. 000-00, segera kirim</a></li>
+    <li class="divider"></li>
+    <li><a class="red-text" href="#!">order. 000-00, terlambat kirim</a></li>
+</ul>
+
+<!-- . profil -->
+<ul id="prof" class="dropdown-content prof">
+    <li><a class="white-text" href="#!">Profil</a></li>
+    <li><a class="white-text" href="#!">Pengaturan</a></li>
+    <li class="divider"></li>
+    <li><a class="white-text" href="/logout">Keluar</a></li>
+</ul>
+
+
+
+<!-- 2. menu samping -->
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav section">
+            <li><a href="/welcome">SELAMAT DATANG</a></li>
+            <li><a href="#order">ORDER</a></li>
+            <li><ul class="collapsible collapsible-accordion repair">
+                <li>
+                    <a class="collapsible-header black repair">ANTRIAN</a>
+                    <div class="collapsible-body repair">
+                        <ul>
+                            <li><a href="/antrian-rec#antri-receiving">&nbsp Di-Receiving</a></li>
+                            <li><a href="/antrian-lab#antri-lab">&nbsp Di-Lab</a></li>
+                            <li><a href="/antrian-selesai#antri-selesai">&nbsp Telah-Selesai</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            </li>
+            <li><a href="/pengambilan#pengambilan">PENGAMBILAN</a></li>
+            <li><a href="#cari">PENCARIAN</a></li>
+        </ul>
+    </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="warna">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="tetapsetia mundur">
+                    <a href="#menu-toggle" id="menu-toggle"><i class="material-icons">view_stream</i></a>
+                </div>
+                <div class="eser">
+                    <!-- Selamat Datang -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="welcome">
+                        <h4>Selamat Datang</h4>
+                        <div class="panel-body mundur">
+                            <h5>Informasi Alat</h5>
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    <div class="card orange darken-1">
+                                        <div class="card-content white-text">
+                                            <span class="card-title">Alat Masuk</span>
+                                            <p>
+                                                <span class="number">{{alatmasuk}}</span>
+                                                <span class="title">alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4">
+                                    <div class="card red darken-1">
+                                        <div class="card-content white-text">
+                                            <span class="card-title">Proses</span>
+                                            <p>
+                                                <span class="number">{{alatproses}}</span>
+                                                <span class="title">alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4">
+                                    <div class="card green darken-1">
+                                        <div class="card-content white-text">
+                                            <span class="card-title">Alat Keluar</span>
+                                            <p>
+                                                <span class="number">{{alatkeluar}}</span>
+                                                <span class="title">alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Proses</h5>
+                            <div class="row">
+                                <div class="col s12 m4">
+                                    <a>Antrian Receiving</a>
+                                    <div class="card blue darken-1">
+                                        <div class="card-content white-text">
+                                            <p>
+                                                <span class="number">{{antrirec}}</span>
+                                                <span class="title">Alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a>Antrian Lab</a>
+                                    <div class="card blue darken-1">
+                                        <div class="card-content white-text">
+                                            <p>
+                                                <span class="number">{{antrilab}}</span>
+                                                <span class="title">Alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <a>Antrian Selesai</a>
+                                    <div class="card blue darken-1">
+                                        <div class="card-content white-text">
+                                            <p>
+                                                <span class="number">{{antrisel}}</span>
+                                                <span class="title">Alat</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4 mundur2">
+                                    <h6 class="ter-alat" data-tooltip="terkirim {{kirim}} alat">Persentase Terkirim</h6>
+                                    <div class="progress mundur ter-persen" data-tooltip="{{terkirim}}%">
+                                        <div class="determinate" style="width: {{terkirim}}%"></div>
+                                    </div>
+                                    </br>
+                                    <h6 class="ter-alat" data-tooltip="terkalibrasi {{kalibrasi}} alat">Persentase Terkalibrasi</h6>
+                                    <div class="progress mundur ter-persen" data-tooltip="{{terkalibrasi}}%">
+                                        <div class="determinate" style="width: {{terkalibrasi}}%"></div>
+                                    </div>
+                                    </br>
+                                    <h6 class="ter-alat" data-tooltip="ter-close {{close}} alat">Persentase Ter-close </h6>
+                                    <div class="progress mundur ter-persen" data-tooltip="{{tersedia}}%">
+                                        <div class="determinate" style="width: {{tersedia}}%"></div>
+                                    </div>
+                                </div>
+                                <!-- data informasi antrian lab -->
+                                <div class="col s12 m4">
+                                    <div class="row">
+                                        <div class="col s6 m6">
+                                            <h6>Lab Dimensi</h6>
+                                            <div class="card blue-grey darken-1">
+                                                <div class="card-content white-text">
+                                                    <p>
+                                                        <span class="number">{{antridim}}</span>
+                                                        <span class="title">Alat</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="progress ygselesai" data-tooltip="selesai {{selesaidim}} alat">
+                                                <div class="determinate" style="width: {{persendim}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s6 m6">
+                                            <h6>Lab Mekanik</h6>
+                                            <div class="card blue-grey darken-1">
+                                                <div class="card-content white-text">
+                                                    <p>
+                                                        <span class="number">{{antrimek}}</span>
+                                                        <span class="title">Alat</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="progress ygselesai" data-tooltip="selesai {{selesaimek}} alat">
+                                                <div class="determinate" style="width: {{persenmek}}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6 m6">
+                                            <h6>Lab Elektrik</h6>
+                                            <div class="card blue-grey darken-1">
+                                                <div class="card-content white-text">
+                                                    <p>
+                                                        <span class="number">{{antrielek}}</span>
+                                                        <span class="title">Alat</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="progress ygselesai" data-tooltip="selesai {{selesaielek}} alat">
+                                                <div class="determinate" style="width: {{persenelek}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col s6 m6">
+                                            <h6>Lab Temperatur</h6>
+                                            <div class="card blue-grey darken-1">
+                                                <div class="card-content white-text">
+                                                    <p>
+                                                        <span class="number">{{antritemp}}</span>
+                                                        <span class="title">Alat</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="progress ygselesai" data-tooltip="selesai {{selesaitemp}} alat">
+                                                <div class="determinate" style="width: {{persentemp}}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FORM ORDER -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="order">
+                        <h4>Order</h4>
+                        <div class="order">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="tanggal" type="text" value="{{moment}}">
+                                        <label for="tanggal">Tanggal</label>
+                                    </div>
+                                    <div class="input-field col s3">
+                                        <input id="no-order" type="text" class="" value="">
+                                    {{#each tinggi}}
+                                        <label for="no-order">Order terakhir : {{this.No_Order}}</label>
+                                    {{/each}}
+                                    </div>
+                                    <a href="/tinggi#order" class="btn-floating green kirim terakhir"><i class="material-icons">input</i></a>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s4">
+                                        <input id="lokasi" type="text" class="">
+                                        <label for="lokasi">Lokasi</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input id="pengirim" type="text" class="">
+                                        <label for="pengirim">Pengirim</label>
+                                    </div>
+                                    <div class="input-field col s4">
+                                        <input id="nomet" type="text" class="tambah-nomet">
+                                        <label for="nomet">Nomet</label>
+                                    </div>
+                                </div>
+
+                                <table id="tab-sementara">
+                                    <thead>
+                                        <tr>
+                                            <th data-field="tanggal">Tanggal</th>
+                                            <th data-field="no-order">No_Order</th>
+                                            <th data-field="sub-no">Sub_No</th>
+                                            <th data-field="nomet">Nomet</th>
+                                            <th data-field="lokasi">Lokasi</th>
+                                            <th data-field="pengirim">Pengirim</th>
+                                            <th data-field="antrian">Antrian</th>
+                                            <th data-field="jenisAlat">Jenis_Alat</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <a href="/antrian-rec#antri-receiving" id="convert-table" class="waves-effect waves-light btn mundur" onClick="sendJSON()">Submit</a>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ANTRIAN RECEIVING -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="antri-receiving">
+                        <h4>Antrian-Receiving</h4>
+                        <form action="/kirim" method="post" class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input type="text" name="order" id="order">
+                                    <label for="order">order kirim</label>
+                                </div>
+                                <div class="input-field col s3" hidden>
+                                    <input type="text" name="antrian" id="antrian" value="lab">
+                                    <label for="antrian"></label>
+                                    <input type="text" name="tgllab" id="tgllab" value="{{moment}}">
+                                    <label for="tgllab"></label>
+                                </div>
+                                <button href="/#antri-receiving" class="btn-floating green kirim"><i class="material-icons">input</i></button>
+                            </div>
+                            {{#if anchor}}
+                                <script> window.onload = window.location.hash = '#antri-receiving'; </script>
+                                {{/if}}
+                        </form>
+                        <div class="center tabel" >
+                            <table id="tab-receiving" class="scroll">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Antrian Receiving</th></tr>
+                                <tr>
+                                    <th data-field="tgl-masuk">Tgl_Masuk</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="sub-no">Sub_No</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="jenis-alat">Jenis_Alat</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="pengirim">Pengirim</th>
+                                    <th data-field="waktu">Waktu</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items}}
+                                {{# each items }}
+                                    <tr>
+                                        <td>{{moment this.Tanggal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Sub_No}}</td>
+                                        <td>{{this.Nomet}}</td>
+                                        <td>{{this.Jenis_Alat}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{this.Pengirim}}</td>
+                                        <td>{{moment this.Tanggal "from" d}}</td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                    <tr>
+                                        <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                    </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                                <a href="/antrian-rec#antri-receiving" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                    <!-- ANTRIAN LAB -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="antri-lab">
+                        <h4>Antrian-Lab</h4>
+                        <form id="myform" action="/selesai" method="post" class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-orders" onkeyup="myFunction3()" placeholder="Cari order..">
+                                </div>
+                                <div class="input-field col s3">
+                                    <input type="text" name="nomet" id="nomets" value="">
+                                    <label for="order">nomet</label>
+                                </div>
+                                <div class="input-field col s3" hidden>
+                                    <input type="text" name="hasil" id="hasil" value="">
+                                    <label for="hasil"></label>
+                                    <input type="text" name="antrian" id="antrian" value="selesai">
+                                    <label for="antrian"></label>
+                                    <input type="text" name="tglkal" id="tglkal" value="{{moment}}">
+                                    <label for="tglkal"></label>
+                                </div>
+                                <button id="submit-form" class="btn-floating green kirim"><i class="material-icons">input</i></button>
+                            </div>
+                            {{#if anchor1}}
+                                <script> window.onload = window.location.hash = '#antri-lab'; </script>
+                            {{/if}}
+                        </form>
+
+                        <div class="center tabel" >
+                            <table id="tab-lab" class="scroll lab">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Antrian Lab</th></tr>
+                                <tr>
+                                    <th data-field="tgl-masuk">Tgl_Masuk</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="sub-no">Sub_No</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="Waktu">Waktu</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items2}}
+                                {{# each items2 }}
+                                    <tr>
+                                        <td>{{moment this.Tgllab format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Sub_No}}</td>
+                                        <td class="nr">{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{moment this.Tgllab "from" d}}</td>
+                                        <td><label for="submit-form" class="btn-floating green use-address selesai" data-tooltip="pass"><i class="material-icons">done</i></label></td>
+                                        <td><label for="submit-form" class="btn-floating red use-add selesai" data-tooltip="failed"><i class="material-icons">not_interested</i></label></td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a id="second" href="/antrian-lab#antri-lab" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                    <!-- ANTRIAN SELESAI -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="antri-selesai">
+                        <h4>Antrian-Selesai</h4>
+                        <form action="/bawa" method="post" class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input type="text" name="order" id="order">
+                                    <label for="order">order</label>
+                                </div>
+                                <div class="input-field col s3" hidden>
+                                    <input type="text" name="antrian" id="antrian" value="receiving_sb">
+                                    <label for="antrian"></label>
+                                    <input type="text" name="tglsb" id="tglsb" value="{{moment}}">
+                                    <label for="tglsb"></label>
+                                </div>
+                                <button href="/#antri-selesai" class="btn-floating green kirim ambil"><i class="material-icons">input</i></button>
+                            </div>
+                            {{#if anchor2}}
+                                <script> window.onload = window.location.hash = '#antri-selesai'; </script>
+                            {{/if}}
+                        </form>
+                        <div class="center tabel" >
+                            <table id="tab-selesai" class="scroll salse">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Antrian Selesai</th></tr>
+                                <tr>
+                                    <th data-field="tgl-selesai">Tgl_Selesai</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="sub-no">Sub_No</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items3}}
+                                {{# each items3 }}
+                                    <tr>
+                                        <td>{{moment this.Tglkal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Sub_No}}</td>
+                                        <td>{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a href="/antrian-selesai#antri-selesai" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                    <!-- PENGAMBILAN ALAT -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="pengambilan">
+                        <h4>Pengambilan</h4>
+                        <form id="myform" action="/close" method="post" class="col s12 l6 m6">
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <input type="text" name="nomet" id="nomett" value="">
+                                    <label for="nomet">nomet</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <input type="text" name="order" id="order" value="">
+                                    <label for="order">order</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" name="pengambil" id="pengambil" value="">
+                                    <label for="pengambil">pengambil</label>
+                                </div>
+                                <div class="input-field col s2">
+                                    <input type="text" name="nik" id="nik" value="">
+                                    <label for="nik">NIK</label>
+                                </div>
+                                <div class="input-field" hidden>
+                                    <input type="text" name="antrian" id="antrian" value="close">
+                                    <label for="antrian"></label>
+                                    <input type="text" name="tglclose" id="tglclose" value="{{moment}}">
+                                    <label for="tglclose"></label>
+                                </div>
+                                <button id="close-form" class="btn-floating green kirim"><i class="material-icons">input</i></button>
+                            </div>
+                            {{#if anchor3}}
+                                <script> window.onload = window.location.hash = '#pengambilan'; </script>
+                            {{/if}}
+                        </form>
+                        <div class="center tabel">
+                            <table id="tab-close" class="scroll">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Pengambilan Alat</th></tr>
+                                <tr class="header">
+                                    <th data-field="tgl-terima">Tgl_Diterima</th>
+                                    <th data-field="tgl-kalibrasi">Tgl_Kalibrasi</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="pengirim">Pengirim</th>
+                                    <th data-field="antrian">Antrian</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items4}}
+                                {{# each items4 }}
+                                    <tr>
+                                        <td>{{moment this.Tanggal format="D MMMM, YYYY"}}</td>
+                                        <td>{{moment this.Tglkal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td class="nn">{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{this.Pengirim}}</td>
+                                        <td>{{this.Antrian}}</td>
+                                        <td><label for="close-form" class="btn-floating green use-close close"><i class="material-icons">input</i></label></td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a href="/pengambilan#pengambilan" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                    <!-- PENCARIAN ALAT -->
+                    <div class="col s12 m11 l11 z-depth-3 section konten scrollspy" id="cari">
+                        <h4>Pencarian</h4>
+                        <form class="col s6 l5 m5">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-nomet" onkeyup="myFunction()" placeholder="Cari Nomet..">
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-order" onkeyup="myFunction1()" placeholder="Cari order..">
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" id="cari-lokasi" onkeyup="myFunction2()" placeholder="Cari lokasi..">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="center tabel wrapper">
+                            <table id="tab-cari" class="scroll kare">
+                                <thead>
+                                <tr><th class="kosong" colspan="8">Pencarian</th></tr>
+                                <tr class="header">
+                                    <th data-field="tgl-terima">Tgl_Diterima</th>
+                                    <th data-field="no-order">No_Order</th>
+                                    <th data-field="nomet">Nomet</th>
+                                    <th data-field="lokasi">Lokasi</th>
+                                    <th data-field="pengirim">Pengirim</th>
+                                    <th data-field="antrian">Antrian</th>
+                                    <th data-field="tgl-kal">Tgl_Kal</th>
+                                    <th data-field="hasil">Hasil</th>
+                                    <th data-field="tgl-Kembali">Tgl_Kembali</th>
+                                    <th data-field="pengambil">Pengambil</th>
+                                    <th data-field="nik">NIK</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{#if items5}}
+                                {{# each items5 }}
+                                    <tr>
+                                        <td>{{moment this.Tanggal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.No_Order}}</td>
+                                        <td>{{this.Nomet}}</td>
+                                        <td>{{this.Lokasi}}</td>
+                                        <td>{{this.Pengirim}}</td>
+                                        <td>{{this.Antrian}}</td>
+                                        <td>{{moment this.Tglkal format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.Hasil}}</td>
+                                        <td>{{moment this.Tglclose format="D MMMM, YYYY"}}</td>
+                                        <td>{{this.Pengambil}}</td>
+                                        <td>{{this.NIK}}</td>
+                                    </tr>
+                                {{/each}}
+                                {{else}}
+                                <tr>
+                                    <td class="kosong" colspan="8"><h6>TIDAK ADA ALAT DIANTRIAN</h6></td>
+                                </tr>
+                                {{/if}}
+                                </tbody>
+                            </table>
+                            <a href="/showall#cari" value="Refresh Page" onClick="window.location.reload()">LOAD DATA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 6. copyright -->
+<footer class="center">
+    <p>Copyright &copy; zarCompany&trade;</p>
+</footer>
