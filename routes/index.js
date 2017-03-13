@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var mongo = require('mongodb').MongoClient;
+var mongo = require('mongodb');
 var assert = require('assert');
-var url = 'mongodb://heroku_30qp2xgr:vu4okpr9a9of3ev8kpudk8d5tg@ds053370.mlab.com:53370/heroku_30qp2xgr';
+var url = process.env.MONGODB_URI;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
