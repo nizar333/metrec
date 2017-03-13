@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('serene-citadel-95562:server');
+var debug = require('debug')('metrec:server');
 var http = require('http');
 
 /**
